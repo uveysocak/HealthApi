@@ -4,27 +4,13 @@ using Health_Api.Entities;
 
 namespace Health_Api.DataAccess.Concretes;
 
-public class AppointmentRepository : IAppointmentRepository
+public class AppointmentRepository : GenericRepository<Appointment>, IAppointmentRepository
 {
     private BaseDbContext _context;
 
-    public AppointmentRepository(BaseDbContext context)
+    public AppointmentRepository(BaseDbContext context) : base(context)
     {
-        _context = context;
     }
-
-    public void Add(Appointment appointment)
-    {
-        _context.Appointments.Add(appointment);
-        _context.SaveChanges();
-    }
-
-    public void Delete(int id)
-    {
-        _context.Remove(id);
-        _context.SaveChanges();
-    }
-
     public List<Appointment> GetAll()
     {
         List<Appointment> appointments = _context.Appointments.ToList();

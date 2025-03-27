@@ -2,12 +2,7 @@
 
 namespace Health_Api.DataAccess.Abstracts;
 
-public interface IDoctorRepository
+public interface IDoctorRepository : IGenericRepository<Doctor>
 {
-    void Add(Doctor doctor);
-    void Update(Doctor doctor);
-    void Delete(int id);
-    List<Appointment> GetAll();
-    IQueryable<Doctor> GetQueryable();
-    Doctor? GetById(int id);
+
 }

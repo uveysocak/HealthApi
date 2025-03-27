@@ -4,7 +4,6 @@ using Health_Api.Models.Dtos.Appointments;
 using Health_Api.Services.Abstracts;
 
 namespace Health_Api.Services.Concretes;
-
 public class AppointmentService : IAppointmentService
 {
     private IAppointmentRepository _appointmentRepository;

@@ -4,47 +4,16 @@ using Health_Api.Entities;
 
 namespace Health_Api.DataAccess.Concretes;
 
-public class PatientRepository : IPatientRepository
+public class PatientRepository : GenericRepository<Patient>, IPatientRepository
 {
-    private BaseDbContext ctx;
+    private readonly PatientRepository _ctx;
 
-    public PatientRepository(BaseDbContext context)
+    public PatientRepository(BaseDbContext context) : base(context)
     {
-        this.ctx = context;
-    }
-
-    public void Add(Patient patient)
-    {
-        ctx.Patients.Add(patient);
-        ctx.SaveChanges();
-    }
-
-    public void Delete(Patient patient)
-    {
-        ctx.Patients.Remove(patient);
-        ctx.SaveChanges();
-    }
-
-    public List<Patient> GetAll()
-    {
-        List<Patient> patients = ctx.Patients.ToList();
-        return patients;
-    }
-
-    public Patient? GetById(int id)
-    {
-        return ctx.Patients.Find(id);
     }
 
     public Patient? GetByNameS(string nS)
     {
-        Patient? patient = ctx.Patients.FirstOrDefault(x => x.Name + x.Surname == nS);
-        return patient;
-    }
-
-    public void Update(Patient patient)
-    {
-        ctx.Patients.Update(patient);
-        ctx.SaveChanges();
+        throw new NotImplementedException();
     }
 }

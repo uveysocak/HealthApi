@@ -2,12 +2,6 @@
 
 namespace Health_Api.DataAccess.Abstracts;
 
-public interface IAppointmentRepository
+public interface IAppointmentRepository : IGenericRepository<Appointment>
 {
-    void Add(Appointment appointment);
-    void Update(Appointment appointment);
-    void Delete(int id);
-    List<Appointment> GetAll();
-    IQueryable<Appointment> GetQueryable();
-    Appointment? GetById(int id);
 }

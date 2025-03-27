@@ -1,0 +1,8 @@
+Vtye baðlanýp CRUD iþlemlerini yaptýðýmýz yer >> Repository
+Create
+Read
+Update
+Delete
+
+-instance = örnek alma 
+Student cp=new Student();
